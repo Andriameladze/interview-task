@@ -1,1 +1,19 @@
-<p>sc-four-parent works!</p>
+<p>
+  <b>Explanation:</b> In this case we have parent with onPush strategy and child
+  with default. We are dealing with primitive values now, if we update the
+  parent component, it will trigger the CD and child's UI will be re-rendered,
+  but if we update the child component, parent will not be updated. This happens
+  because parent component is not marked as dirty since we did not change the
+  reference and once CD reaches the parent component, since its not dirty it
+  will not update its view.
+</p>
+
+<h2>Parent Component</h2>
+
+<span>Parent Data: {{ parentData }}</span>
+
+<button (click)="changeData()">Update Parent Data</button>
+
+<br />
+
+<app-sc-four-child [childData]="parentData"></app-sc-four-child>

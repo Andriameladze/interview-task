@@ -1,0 +1,17 @@
+<p>
+  <b>Explanation:</b> In this scenario, we are using observables. So if we
+  update the parent data, it automatically updates the child data as well and
+  this is happening because we are using Async Pipe in the child component which
+  automatically re-renders the UI. Parent is not updating from the child because
+  we are assigning completely different observable to that value.
+</p>
+
+<h2>Parent Component</h2>
+
+<span>Parent Data: {{ data$ | async }}</span>
+
+<button (click)="changeData()">Update Parent Data</button>
+
+<br />
+
+<app-sc-five-child [childData]="data$"></app-sc-five-child>

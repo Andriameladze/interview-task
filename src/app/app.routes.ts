@@ -29,4 +29,11 @@ export const routes: Routes = [
         './components/scenario-4/sc-four-parent/sc-four-parent.component'
       ).then((m) => m.ScFourParentComponent),
   },
+  {
+    path: 'sc-5',
+    loadComponent: () =>
+      import(
+        './components/scenario-5/sc-five-parent/sc-five-parent.component'
+      ).then((m) => m.ScFiveParentComponent),
+  },
 ];

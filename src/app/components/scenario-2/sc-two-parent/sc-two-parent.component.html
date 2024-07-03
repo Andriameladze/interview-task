@@ -4,7 +4,7 @@
   It's because components with onPush strategy are marking their parents as
   dirty and once the change detection triggers, if it sees that component is not
   marked as dirty, it doesn't render its view. Despite the fact that input is
-  being changed, we did not changed the reference to the object, so that it does
+  being changed, we did not change the reference to the object, so that it does
   not mark the component as dirty, because Angular performs shallow comparison
   for the input params. But if we trigger the child component, it automatically
   marks itself and parent component as dirty so the CD renders its views. If we

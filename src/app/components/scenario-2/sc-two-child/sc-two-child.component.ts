@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sc-two-child',
@@ -8,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './sc-two-child.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ScTwoChildComponent {}
+export class ScTwoChildComponent {
+  @Input() childData = { name: '' };
+
+  updateChild() {
+    this.childData.name = 'C';
+  }
+}

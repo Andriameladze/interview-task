@@ -1,1 +1,21 @@
-<p>sc-two-parent works!</p>
+<p>
+  <b>Explanation:</b> In this example, both components CD strategies are onPush.
+  If we update the parent component it will not update the child component, why?
+  It's because components with onPush strategy are marking their parents as
+  dirty and once the change detection triggers, if it sees that component is not
+  marked as dirty, it doesn't render its view. Despite the fact that input is
+  being changed, we did not changed the reference to the object, so that it does
+  not mark the component as dirty. But if we trigger the child component, it
+  automatically marks itself and parent component as dirty so the CD renders its
+  views.
+</p>
+
+<h2>Parent Component</h2>
+
+<span>Parent Data: {{ parentData.name }}</span>
+
+<button (click)="changeData()">Update Parent Data</button>
+
+<br />
+
+<app-sc-two-child [childData]="parentData"></app-sc-two-child>

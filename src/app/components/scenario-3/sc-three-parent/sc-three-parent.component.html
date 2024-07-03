@@ -1,1 +1,28 @@
-<p>sc-three-parent works!</p>
+<p>
+  <b>Explanation:</b> In this case, we have parent component with default CD
+  strategy and child with onPush. So when we update parent, it behaves similarly
+  like scenario 2. So if we don't change the reference of the object, child
+  component will not be updated. But if we have a primitive value and update it
+  in the Parent component, it will be updated in the child component as well
+  (Click Update Primitive Parent Data Button). This is happening because we are
+  changing the input, and the reference is being changed so that it triggers the
+  and updates the UI of the child component as well.
+</p>
+
+<h2>Parent Component</h2>
+
+<span>Parent Data: {{ parentData.name }}</span>
+
+<button (click)="changeData()">Update Parent Data</button>
+
+<br />
+<br />
+
+<span>Primitive Parent Data: {{ parentDataPrimitive }}</span>
+
+<button (click)="changePrimitiveData()">Update Primitive Parent Data</button>
+
+<app-sc-three-child
+  [childDataPrimitive]="parentDataPrimitive"
+  [childData]="parentData"
+></app-sc-three-child>

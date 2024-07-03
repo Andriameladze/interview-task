@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sc-three-child',
@@ -8,4 +8,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './sc-three-child.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ScThreeChildComponent {}
+export class ScThreeChildComponent {
+  @Input() childData = { name: '' };
+  @Input() childDataPrimitive = '';
+
+  updateChild() {
+    this.childData.name = 'C';
+  }
+}

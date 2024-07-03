@@ -3,7 +3,11 @@
   update the parent data, it automatically updates the child data as well and
   this is happening because we are using Async Pipe in the child component which
   automatically re-renders the UI. Parent is not updating from the child because
-  we are assigning completely different observable to that value.
+  we are assigning completely different observable to that value. Now, if we
+  want to have an updated data in both components, we can simply use the service
+  and it won't matter from which component we'll change the data. It will be
+  updated because we will be using Async pipe in the parent component as well as
+  in the child component.
 </p>
 
 <h2>Parent Component</h2>
@@ -11,6 +15,12 @@
 <span>Parent Data: {{ data$ | async }}</span>
 
 <button (click)="changeData()">Update Parent Data</button>
+
+<br />
+<br />
+
+<span>Data from Service: {{ serviceData$ | async }}</span>
+<button (click)="updateServiceData()">Update From Parent</button>
 
 <br />
 

@@ -5,9 +5,12 @@
   dirty and once the change detection triggers, if it sees that component is not
   marked as dirty, it doesn't render its view. Despite the fact that input is
   being changed, we did not changed the reference to the object, so that it does
-  not mark the component as dirty. But if we trigger the child component, it
-  automatically marks itself and parent component as dirty so the CD renders its
-  views.
+  not mark the component as dirty, because Angular performs shallow comparison
+  for the input params. But if we trigger the child component, it automatically
+  marks itself and parent component as dirty so the CD renders its views. If we
+  want to update the child's view when parent is updating, we can do following:
+  change the reference to the object by simply creating a new object, manually
+  trigger changes in the child component, in ngDoCheck cycle for example.
 </p>
 
 <h2>Parent Component</h2>

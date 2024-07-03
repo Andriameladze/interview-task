@@ -15,7 +15,4 @@ export class ScTwoParentComponent {
   changeData() {
     this.parentData.name = 'B';
   }
-  test() {
-    this.parentData = { name: 'Test' };
-  }
 }

@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-sc-two-child',
   standalone: true,
   imports: [],
   templateUrl: './sc-two-child.component.html',
-  styleUrl: './sc-two-child.component.scss'
+  styleUrl: './sc-two-child.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ScTwoChildComponent {
-
-}
+export class ScTwoChildComponent {}

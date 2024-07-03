@@ -1,0 +1,15 @@
+.scenarios__wrapper {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  li {
+    width: fit-content;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
+    }
+  }
+}

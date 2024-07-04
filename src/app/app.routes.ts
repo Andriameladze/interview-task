@@ -43,4 +43,11 @@ export const routes: Routes = [
         './dependency-injection/components/di-sc-1/di-one-parent/di-one-parent.component'
       ).then((m) => m.DiOneParentComponent),
   },
+  {
+    path: 'di-2',
+    loadComponent: () =>
+      import(
+        './dependency-injection/components/di-sc-2/dash/dash.component'
+      ).then((m) => m.DashComponent),
+  },
 ];

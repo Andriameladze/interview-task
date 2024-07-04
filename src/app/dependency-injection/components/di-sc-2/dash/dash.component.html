@@ -1,0 +1,19 @@
+<p>
+  <b>Explanation:</b> In this case we have parent component, child component and
+  the sibling component. We have provided number generator service in the parent
+  component. Despite the fact that service is provided in root, the parent
+  components dependency instance overrides the roots instance and gets its own
+  instance that is shared to its child components, meaning that parent and child
+  components will have same instance, so they are generating the same number.
+  But the sibling is generating the different number because it got different
+  instance. This is the usecase when we want to have different instance of
+  services. Benefit of it is that we can have scoped services that are needed
+  only for specific features. Which itself improves the performance because when
+  we have specific service for specific features we are not initiating services
+  for the entire application, and its efficient for use of resources, as well
+  since the feature is separated with its own services its easier to maintain
+  and test.
+</p>
+
+<app-di-two-parent></app-di-two-parent>
+<app-di-two-sibling></app-di-two-sibling>

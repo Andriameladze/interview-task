@@ -11,7 +11,9 @@
   want to update the child's view when parent is updating, we can do following:
   change the reference to the object by simply creating a new object, manually
   trigger changes in the child component, in ngDoCheck cycle for example, create
-  a shared service.
+  a shared service. I think that this approach is the best one for application's
+  performance. It is because components will re-render when specific triggers
+  are met and and it will avoid unneccessary re-rendering.
 </p>
 
 <h2>Parent Component</h2>

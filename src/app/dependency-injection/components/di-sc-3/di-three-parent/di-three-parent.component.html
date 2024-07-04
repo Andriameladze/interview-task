@@ -1,0 +1,15 @@
+<p>
+  <b>Explanation:</b> In this case we have parent and child components. Each
+  have provided number generator service. In this case, each component receives
+  different instance of that service. Why is that? It is because the child
+  components dependency instance overrides the parent's one. Meaning, that they
+  have completely different instances, resulting generation of different
+  numbers. This approach is good when we want to have services for each
+  component level.
+</p>
+
+<h2>Parent Component</h2>
+<p>{{ parentNumber | async }}</p>
+<button (click)="generateNumber()">Generate Number From Parent</button>
+
+<app-di-three-child></app-di-three-child>

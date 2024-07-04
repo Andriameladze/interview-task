@@ -1,4 +1,4 @@
-.scenarios__wrapper {
+.scenarios {
   ul {
     display: flex;
     flex-direction: column;
@@ -11,5 +11,10 @@
     &:hover {
       color: red;
     }
+  }
+
+  &__content {
+    display: flex;
+    gap: 50px;
   }
 }

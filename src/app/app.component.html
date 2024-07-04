@@ -1,15 +1,31 @@
-<div class="scenarios__wrapper">
+<div class="scenarios">
   <h1>Please select the scenario from the list</h1>
 
-  <ul>
-    <li [routerLink]="['/sc-1']">Scenario 1 (Both Default)</li>
-    <li [routerLink]="['/sc-2']">Scenario 2 (Both onPush)</li>
-    <li [routerLink]="['/sc-3']">Scenario 3 (Parent Default - Child onPush)</li>
-    <li [routerLink]="['/sc-4']">Scenario 4 (Parent onPush - Child Default)</li>
-    <li [routerLink]="['/sc-5']">
-      Scenario 5 (Parent onPush - Child onPush | Using Observables)
-    </li>
-  </ul>
+  <div class="scenarios__content">
+    <div>
+      <span><b>Change Detection Strategies</b></span>
+      <ul>
+        <li [routerLink]="['/sc-1']">Scenario 1 (Both Default)</li>
+        <li [routerLink]="['/sc-2']">Scenario 2 (Both onPush)</li>
+        <li [routerLink]="['/sc-3']">
+          Scenario 3 (Parent Default - Child onPush)
+        </li>
+        <li [routerLink]="['/sc-4']">
+          Scenario 4 (Parent onPush - Child Default)
+        </li>
+        <li [routerLink]="['/sc-5']">
+          Scenario 5 (Parent onPush - Child onPush | Using Observables)
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <span><b>Hierarchical Dependency Injection (DI)</b></span>
+      <ul>
+        <li [routerLink]="['/di-1']">Scenario 1 (Using Singleton Service)</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <hr />

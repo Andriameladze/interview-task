@@ -36,4 +36,11 @@ export const routes: Routes = [
         './components/scenario-5/sc-five-parent/sc-five-parent.component'
       ).then((m) => m.ScFiveParentComponent),
   },
+  {
+    path: 'di-1',
+    loadComponent: () =>
+      import(
+        './dependency-injection/components/di-sc-1/di-one-parent/di-one-parent.component'
+      ).then((m) => m.DiOneParentComponent),
+  },
 ];

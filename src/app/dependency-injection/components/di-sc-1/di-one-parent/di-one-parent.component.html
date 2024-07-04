@@ -1,0 +1,25 @@
+<p>
+  <b>Explanation:</b>
+  Hierarchical DI is technique of Angular when it creates a DI tree based on the
+  component tree. This means that we can provide services at different levels
+  (root, component,etc) and the Angular will look up the DI tree to find its
+  dependency. Each component can have its own injector. Angular starts looking
+  for the service in its own injector and if it deosn't find it there, then it
+  continues looking for injector in its parents untill it reaches the root
+  injector. If it can't find an injector in the root as well, it throws an
+  error. <br />
+  In this scenario, we are injecting the service that is provided in the root.
+  So the components does not have their own service provided. So what happens
+  here is that both, parent and chld components share the same instance of the
+  number generator service. So once we generate the number in the service from
+  child or parent component, we are using the same instance of the service so
+  the same numbers are generating. So basically we can use this approach when we
+  want to have singeleton, one instance services that will be available app
+  wide.
+</p>
+
+<h2>Parent Component</h2>
+<p>{{ parentNumber | async }}</p>
+<button (click)="generateNumber()">Generate Number From Parent</button>
+
+<app-di-one-child></app-di-one-child>
